@@ -1,0 +1,55 @@
+<div class="bg-white flex flex-col md:flex-row md:justify-between items-center h-auto w-full md:h-12 border border-solid shadow">
+    
+    <!-- Left navbar -->
+    <div class="pl-2 h-full flex flex-row w-full justify-between items-center">
+        <!-- Logo-->
+        <div class="flex rounded-2xl p-1">
+            <a href="{% url 'home' %}">
+                <img class="h-10 hover:h-11" src="static/Logo.png">
+            </a>
+        </div>
+        <!-- Logo -->
+    
+        <!-- default: right side -->
+        <div class="flex mr-4 md:hidden">
+            {% if not user.is_authenticated  %}
+                <a class="px-2" href="{% url 'account_login' %}">
+                    Login
+                </a>
+                <a class="px-2" href="{% url 'account_signup' %}">
+                    Register
+                </a>
+            {% else %}
+                <a class="px-2" href="{% url 'account_logout' %}">
+                    Logout
+                </a>
+            {% endif %}
+        </div>
+        <!-- default: right side -->
+    </div>
+    <!-- Left navbar -->
+    
+    <!-- main navbar-->
+    <div class="flex w-full justify-center">
+        Main Menu   
+    </div>
+    
+    <!-- top right navbar-->
+    <div class="hidden w-full  justify-end md:flex md:mr-4">
+        {% if not user.is_authenticated  %}
+            <a class="px-2" href="{% url 'account_login' %}">
+                Login
+            </a>
+            <a class="px-2" href="{% url 'account_signup' %}">
+                Register
+            </a>
+        {% else %}
+            <a class="px-2" href="{% url 'account_logout' %}">
+                Logout
+            </a>
+        {% endif %}
+        
+    </div>
+    <!-- top right navbar-->
+
+</div>
