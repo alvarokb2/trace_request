@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+{% include 'components/navbar.html' %}
+{% endblock navbar %}
+
+{% block left_sidebar %}
+        {% include 'components/sidebars/left/sidebar.html' %}
+{% endblock left_sidebar %}
+
+{% block main_content %}
+    <div class="bg-white flex flex-col w-screen h-full justify-start items-start pl-12 pt-6 rounded-lg shadow">
+        
+        
+        <a href="{% url 'projects:create' %}">+ Nuevo proyecto</a>
+        <br>
+        {% for project in projects %}
+            <a href="{% url 'projects:detail' project.id %}">
+                {{project}}
+            </a>
+        {% endfor %}
+        
+    </div>
+{% endblock main_content %}
+
+{% block footer %}
+{% include 'components/footer.html' %}
+{% endblock footer %}
