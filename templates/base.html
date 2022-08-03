@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% tailwind_css %}
-
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     {% block extra_head %}{% endblock extra_head %}
     <title>Trace Request App</title>
 </head>
-<body class="bg-gray-200">
+<body class="flex flex-col w-full bg-gray-200">
     <!-- navbar -->
     {% block navbar %}{% endblock navbar %}
     <!-- navbar -->
 
     <!-- content -->
-    <div class="flex flex-row justify-between items-center w-full h-full my-1">
+    <div class="flex flex-row justify-between items-center w-full h-full m-1">
     {% block left_sidebar %}{% endblock left_sidebar %}
     {% block main_content %}{% endblock main_content %}
     </div>

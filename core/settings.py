@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_tailwind',
 
     'core',
+    'projects',
 ]
 
 SITE_ID = 1
