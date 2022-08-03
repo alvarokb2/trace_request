@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+{% include 'components/navbar.html' %}
+{% endblock navbar %}
+
+{% block left_sidebar %}
+        {% include 'components/sidebars/left/sidebar.html' %}
+{% endblock left_sidebar %}
+
+{% block main_content %}
+    
+
+<div class="bg-white flex flex-col w-screen h-full justify-start items-start pl-12 pt-6 rounded-lg shadow">
+    Estas seguro de querer eliminar el proyecto?
+    <form method="POST">
+    {% csrf_token %}
+    {{form}}
+
+    <br>
+    <button type="submit">Eliminar</button>
+    </form>
+    </div>
+{% endblock main_content %}
+
+{% block footer %}
+{% include 'components/footer.html' %}
+{% endblock footer %}
