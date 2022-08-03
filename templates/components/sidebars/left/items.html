@@ -1,11 +1,16 @@
 <ul>
     <li>
-        item 1
+        {% if user.is_authenticated %}
+            <a href="{% url 'home' %}">
+                {{ user.username | capfirst }}
+            </a>    
+        {% endif %}
     </li>
     <li>
-        item 2
-    </li>
-    <li>
-        item 3
+        {% if user.is_authenticated %}
+            <a href="{% url 'projects:home' %}">
+                Mis Proyectos
+            </a>    
+        {% endif %}
     </li>
 </ul>
